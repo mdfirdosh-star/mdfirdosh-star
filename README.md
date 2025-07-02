@@ -1,5 +1,4 @@
 # pizza program
-"""
 pizza_size=(input("enter your pizza size \n m,s,l").lower())
 cold_drink=(input("should you want to cold drink \n y, n")).lower()
 total_bill=0
@@ -158,7 +157,7 @@ while not game_over:
         else:
             display+="_"
     print(display)
-"""
+
 
 
     # projecr step 4
