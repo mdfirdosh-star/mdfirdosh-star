@@ -1,0 +1,293 @@
+#(ALL CODE RUN IN JUPUTER NOTEBOOK)
+
+
+
+#BAR PLOTS
+
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y=[10,20,30,40,50]
+chart=plt.bar(x,y,color=["r","b","g","b","r"],width =.6,linestyle="-",edgecolor="k",linewidth=1.80)
+plt.xlabel("width")
+plt.ylabel("hight")
+plt.title("the graph of hight and width")
+plt.show()
+
+
+
+#scatter plot
+
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+color=["r","b","g","m","k"]
+size=[400,90,200,700,108]
+y=[90,80,70,60,50]
+s=plt.scatter(x,y,c=color,s=size,marker="*",edgecolor="m")
+plt.xlabel("width")
+plt.ylabel("hight")
+plt.title("the graph of hight and width")
+plt.show()
+
+
+
+#histrogram
+
+import matplotlib.pyplot as plt
+import numpy as np
+import random 
+import seaborn as sns
+var=np.random.randint(1,100,(80))
+o=[10,50,80,100]
+var
+
+  #1.bins()
+
+s=[94, 43, 32, 16, 46, 56, 39, 72, 25, 89, 52, 99, 63,  5, 79, 23, 39,
+       98, 34, 20, 30, 63, 14, 16, 22, 98, 73, 26, 48, 94, 60, 43, 94, 28,
+       21, 98, 54, 41, 39, 62,  5, 55, 23, 34, 48, 23, 52, 75, 22, 38, 85,
+       79, 39,  2, 23, 37, 31, 78, 18, 86, 47, 33, 72, 22, 51, 12, 12,  5,
+       61, 12, 25, 43, 19, 44, 22,  6, 17, 72, 22, 99]
+plt.hist(s,edgecolor="k",bins=o,color="m")
+plt.xlabel(" x axis no",color="r",fontsize=15)
+plt.ylabel("y axis no",color="g",fontsize=15)
+plt.title("graph of histrogram",color="b")
+plt.show()
+
+   #2.cumulative
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1)
+plt.show()
+
+   #3.bottom
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,bottom=10)
+plt.show()
+
+   #4.align()
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid")
+plt.show()
+
+   #5.histtype()
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid",histtype="step")
+plt.show()
+
+   #6.orientaion()
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid",orientation="horizontal")
+plt.show()
+
+    #7.rwidth()
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid",rwidth=.6
+        )
+plt.show()
+
+    #8.log()
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid",rwidth=.6,log=True)
+plt.show()
+
+   #10 axvline()
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid")
+plt.axvline(75,color="b")
+plt.show()
+
+   #11.grid()
+
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid")
+plt.axvline(75,color="b")
+plt.grid()
+plt.show()
+
+   #12.label()
+
+plt.hist(s,edgecolor="k",bins=o,color="m",cumulative=1,align="mid",label="graph",alpha=.9)
+plt.axvline(75,color="b",label="line")
+plt.grid()
+plt.legend()
+plt.show()
+
+
+
+##pie plot
+
+   #1.labels()
+
+import matplotlib .pyplot as plt
+x=[90,20,30]
+y=["water","sunlight","tree"]
+z=[0.03,0,0]
+a=["r","b","g"]
+plt.pie(x,labels=y )
+plt.show()
+
+   #2.explode()
+
+plt.pie(x,labels=y ,explode=z)
+plt.show()
+
+   #3.colors()
+
+plt.pie(x,labels=y ,explode=z,colors=a)
+plt.show()
+
+   #4.autopct()
+
+plt.pie(x,labels=y ,explode=z,colors=a,autopct="%0.2f%%")
+plt.show()
+
+  #5.shadow()
+
+plt.pie(x,labels=y ,explode=z,colors=a,autopct="%0.2f%%",shadow=True)
+plt.show()
+
+   #6.radius()
+
+plt.pie(x,labels=y ,explode=z,colors=a,autopct="%0.2f%%",shadow=True,radius=1.5)
+plt.show()
+
+   #7.labeldistane()
+
+plt.pie(x,labels=y ,explode=z,colors=a,autopct="%0.2f%%",shadow=True,radius=1.5,labeldistance=1.1
+       )
+plt.show()
+
+   #8. startangle()
+
+plt.pie(x,labels=y ,explode=z,colors=a,autopct="%0.2f%%",radius=1.5,labeldistance=1.1,startangle=180
+       )
+plt.show()
+
+    #9.textprops()
+
+plt.pie(x,labels=y ,explode=z,colors=a,autopct="%0.2f%%",radius=1.5,labeldistance=1.1,startangle=180
+       ,textprops={"fontsize":15})
+plt.show()
+
+    #10.counterclock
+
+plt.pie(x,labels=y ,explode=z,colors=a,autopct="%0.2f%%",radius=1.5,labeldistance=1.1,startangle=180
+       ,textprops={"fontsize":15},counterclock=False)
+plt.show()
+
+    #11.wedgeprops()
+
+plt.pie(x,labels=y ,explode=z,colors=a,shadow=.4,autopct="%0.2f%%",radius=1.5,labeldistance=1.1,startangle=180
+       ,textprops={"fontsize":15},counterclock=False,wedgeprops={"linewidth":1,"edgecolor":"r"})
+plt.show()
+
+     #12.Center()
+
+plt.pie(x,labels=y ,explode=z,colors=a,shadow=.4,autopct="%0.2f%%",radius=1.5,labeldistance=1.1,startangle=180
+       ,textprops={"fontsize":15},counterclock=False,wedgeprops={"linewidth":1,"edgecolor":"r",},center=(1,3))
+plt.show()
+
+    #13.Rotatelabels
+
+plt.pie(x,labels=y ,explode=z,colors=a,shadow=.4,autopct="%0.2f%%",radius=1.5,labeldistance=1.1,startangle=180
+       ,textprops={"fontsize":15},counterclock=False,wedgeprops={"linewidth":1,"edgecolor":"r"},rotatelabels=True)
+plt.show()
+
+   #14.multiple pie chart 
+
+import matplotlib .pyplot as plt
+x=[90,20,30]
+y=["water","sunlight","tree"]
+z=[10.30,40]
+a=["r","b","g"]
+plt.pie(x,labels=y,radius=2.5 )
+plt.pie(z,radius=1.5 )
+plt.show()
+
+   #15. ring plot
+
+import matplotlib .pyplot as plt
+x=[90,20,30]
+y=["water","sunlight","tree"]
+z=[10.30,40]
+a=["r","b","g"]
+plt.pie(x,labels=y,radius=1.5)
+plt.pie([1],colors="w")
+plt.axis("equal")
+plt.savefig("file4.png")
+plt.show()
+
+
+
+
+
+
+
+
+
+#STEM PLOT IN MATPLOTLIB 
+
+import matplotlib.pyplot as plt
+x=[90,10,20,30]
+y=[40,30,20,50]
+plt.stem(x,y)
+plt.show()
+
+  #1.linefmt()
+
+plt.stem(x,y,linefmt=":")
+plt.show()
+
+   #2.markerfmt()
+ 
+plt.stem(x,y,linefmt=":",markerfmt="r+")
+plt.show()
+
+    #3.bottom()
+
+plt.stem(x,y,linefmt=":",markerfmt="+b",bottom=10)
+plt.show()
+
+   #4.basefmt()
+
+plt.stem(x,y,linefmt=":",markerfmt="+g",bottom=10,basefmt="b")
+
+   #4.use_line_collection
+
+plt.stem(x,y,linefmt=":",markerfmt="+b",bottom=10,use_line_collection=False)
+plt.show()
+
+   #5.orientation
+
+plt.stem(x,y,linefmt=":",markerfmt="*b",bottom=10,basefmt="y",orientation="horizontal")
+plt.show()
+
+
+
+
+
+
+
+
+
+#BOX PLOT IN MATPLOTLIB
+
+import matplotlib.pyplot as plt
+x=[10,20,30,40,50,60,70,80,100]
+plt.boxplot(x)
+plt.show()
+
+  #1.notch 
+
+plt.boxplot(x,notch=True)
+plt.show()
+
+   #2.vert()
+
+plt.boxplot(x,notch=True,vert=False)
+plt.show()
+
+   #3.widths()
+
+plt.boxplot(x,notch=True,vert=False,widths=1.5)
+plt.show()
+
