@@ -1,0 +1,255 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import numpy as np
+
+x_axis=[1,2,34]
+y_axis=[2,5,6]
+g=pd.DataFrame({"x_axis":x,"y_axis":y})
+sns.lineplot(x="x_axis",y="y_axis", data=g)
+plt.show()
+
+
+plt.plot(x,y)
+plt.show()
+
+
+o=sns.load_dataset("tips")
+o
+
+#Methord of seaborn chart 
+
+ #  1.hue()
+
+sns.lineplot(x="total_bill",y="tip"	,data=o,hue="sex"	)
+plt.show()
+
+#2.size ()
+
+sns.lineplot(x="day",y="time",data=o,hue="size",size=20)
+sns
+plt.show()
+
+#4.style
+
+sns.lineplot(x="day",y="time",data=o,hue="size",size=20,style="size")
+sns
+plt.show()
+
+#5.palette
+
+sns.lineplot(x="day",y="time",data=o,hue="size",size=20,style="size",palette="Accent")
+sns
+plt.show()
+
+#6.markers()
+
+sns.lineplot(x="day",y="time",data=o,hue="size",size=20,style="size",palette="Accent",markers=["o","*"])
+sns
+plt.show()
+
+
+
+
+
+
+
+
+
+
+#Histrogram plot use in seaborn 
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+
+o=sns.load_dataset("tips")
+o
+
+
+sns.displot(o[ "total_bill"],color="r")
+plt.show()
+
+#1.bins()
+
+sns.displot(o[ "total_bill"],color="r",bins=[10,20,30,40,50])
+plt.show()
+
+#2.kde()
+
+sns.displot(o[ "total_bill"],color="r",bins=[10,20,30,40,50],kde=True)
+plt.show()
+
+#3.rug()
+
+sns.displot(o[ "total_bill"],color="r",bins=[10,20,30,40,50],kde=True,rug=True)
+plt.show()
+
+
+
+
+
+
+
+
+
+#Barplot in saeborn 
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns 
+
+
+df =pd.read_csv(r"C:\Users\mdfir\Downloads\FB_data_with_no_date.csv")
+df
+
+pd.set_option("display.max_rows",None)
+
+df
+
+#1.hue()
+
+order_1=["Sun","Sat","Thur",]
+sns.barplot(x="day", y="tip",data=g,hue="sex")
+plt.show()
+
+#2.order()
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1)
+plt.show()
+
+#changing order for hue paramiter for #barchat 
+
+#3.hue_order
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"])
+plt.show()
+
+#4.ci()
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"],ci=100)
+plt.show()
+
+#5.n_boot()
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"],n_boot=90)
+plt.show()
+
+#6.color()
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"],n_boot=90,color="r")
+plt.show()
+
+#7.palatte()
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"],color="r",palette="Accent")
+plt.show()
+
+#8.saturation()
+
+
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"],color="r",palette="Accent",saturation=100)
+plt.show()
+
+#9.errcolor()
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"],color="r",palette="Accent",saturation=100,errcolor="g")
+plt.show()
+
+#10.errwidth()
+
+sns.barplot(x="day", y="tip",data=g,hue="sex",order=order_1,hue_order=["Female","Male"],color="r",palette="Accent",saturation=100,errcolor="g",errwidth=5)
+plt.show()
+
+
+
+
+
+
+
+
+#SCATTER PLOT IN SEABORN 
+
+import pandas as pd
+import matplotlib .pyplot as plt
+import seaborn as sns
+
+
+var=sns.load_dataset("exercise")
+var
+
+sns.scatterplot(x="pulse",y="id",data=var)
+plt.show()
+
+#1.hue()
+
+sns.scatterplot(x="pulse",y="id",data=var,hue="kind")
+plt.show()
+
+#2.style
+
+sns.scatterplot(x="pulse",y="id",data=var,hue="kind",style="pulse")
+plt.show()
+
+#3.size()
+
+sns.scatterplot(x="pulse",y="id",data=var,hue="kind",style="id",size="id")
+plt.show()
+
+#4.markers()
+
+sns.scatterplot(x="pulse",y="id",data=var,hue="kind",style="id",size="pulse",markers=["*",">"])
+plt.show()
+
+#5.alpha 
+
+sns.scatterplot(x="pulse",y="id",data=var,hue="kind",style="kind",alpha=.4)
+plt.show()
+
+
+
+
+
+
+
+
+
+#HEATMAP IN SEABORN 
+
+import matplotlib .pyplot as plt
+import pandas as pd
+import seaborn as sns
+import numpy as np
+var=np.linspace(1,10,20).reshape(4,5)
+var
+
+sns.heatmap([[94, 10, 82, 13, 56],
+       [19, 59, 47, 55, 20],
+       [74,  8,  1, 45, 95],
+       [63,  5,  8, 34, 40],
+       [50, 16,  9, 78, 94],
+       [61, 23, 73, 86, 73],
+       [68, 76, 60, 31, 13],
+       [90, 43, 93, 24, 77],
+       [90, 61, 21, 19, 83],
+       [23, 58, 45, 55, 77],
+       [29, 22, 38, 48, 16],
+       [12,  8,  4, 18, 52]])
+plt.show()
+
+#1.vmax
+
+sns.heatmap(var,vmax=10)
+plt.show()
+
+#2.vmin()
+
+sns.heatmap(var,vmax=10,vmin=1)
+
+#3.cmap()
+
+sns.heatmap(var,vmax=10,vmin=1,cmap="gist_heat")
+plt.show()
+
