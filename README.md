@@ -258,3 +258,244 @@ while not game_over:
         print("win the game")
     print(lavel[part])
 
+
+
+
+
+
+
+
+# project of fake news generater 
+#      ||
+
+# using opretions 
+# import random module
+# create the list (subject, object,placename)
+# use of loop 
+# use of f_string
+# use of strip  
+# use of lower methord
+# use of if alse astiment
+# use of input function 
+
+
+# import random modules 
+import random 
+
+# create the list 
+subjects=["Elon Musk",
+         "Bill Gates",
+         "Taylor Swift",
+         "NASA",
+         "Cristiano Ronaldo",
+         "Google",
+         "Kim Kardashian",
+         "Jeff Bezos" ]
+
+objects=["Flying cars"
+        "Farmland"
+        "Mayor position"
+        "Alien city"
+        "Chocolate factory"
+        "Free houses"
+        "Space agency",
+        "Smartphones",
+        "Underwater cinema",]
+
+places=["New York",
+        "Texas",
+        "Los Angele",
+        "Moon",
+        "Paris",
+        "Dubai",
+        "Florida",
+        "Washington",
+        "Maldives",  ]
+# use of loop
+
+while True :
+# use of random choice methord
+  subject=random.choice(subjects)
+  object=random.choice(objects)
+  place=random.choice(places)
+  headline=(f"FAKE NEWS : {subject} was {object} in {place}")
+  print("\n" + headline)
+  user_input=input("\ndo you want to another headline print(yesh,no)").strip().lower()
+  if  user_input =="no":
+    break
+print("\n thank you using the headline generator  project ")
+
+
+
+
+
+
+
+
+
+
+
+
+# pasward generator project 
+
+# use of random model
+# create the list of alphabate 
+# create the list of symbol 
+# create the list of number 
+# user input function use all loop in int(only number )
+# pasword valible 
+# use of loop
+# use of append function 
+
+# use the random function 
+import random
+# create a empty varible name pasword 
+pasword =" "
+# create the loop in alphabet
+chr=["a","b","c","d","e","f","g","h","i","j","k","l","m",
+    "n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M",
+    "N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+symbol=["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_",
+    "=", "+", "[", "]", "{", "}", ";", ":", "'", '"', ",", ".",
+    "<", ">", "/", "?", "|", "\\", "`", "~"]
+
+
+number=["0","1","2","3","4","5","6","7","8","9"]
+
+
+# use of input function 
+
+chr_input=int(input("\n how many character is use of pasword ")) 
+symbol_input=int(input("\n how many symbol is use of pasword "))
+number_input=int(input("\n how many number is use of pasword "))
+# use of loop
+
+# create the for loop of for chr 
+for i in range(0,chr_input):
+  pasword+=random.choice(chr) # add the chr value in pasword
+
+# create the for loop of for sumbol
+for j in range (0,symbol_input):
+  pasword+=random.choice(symbol) # add the symbol value in pasword
+
+# create the for loop of for number 
+for k in range (0,number_input):
+  pasword+=random.choice(number) # add the number value in pasword
+
+# use the f_string and print the generate the pasword 
+print(f"GENERATED_PASWORD: {pasword} ")
+
+
+
+
+
+
+
+
+
+# water snake and gun project
+# import random modules 
+# import ramdon.randint function
+# if ,elif,else conditions
+# use return keyword
+# input function 
+# def function 
+# 0=water
+# 1=snake
+# 2=gun
+gun=(""" ⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣶⣤⣤⣤⣤⣶⣶⣶⣶⣶⣶⣦⣤⣤⡀⠀⠀⣶⠀
+⢸⣿⣿⣿⣿⣿⣿⡿⢿⣿⡿⠟⢻⣿⣿⡟⠛⠛⠛⠉⠙⠛⠋⠀⠈⠉⠀⠈⠉⠁
+⢸⣿⠿⠟⠋⠉⠀⢀⣾⡿⠉⠀⠈⠸⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠹⣿⣷⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠃⠀⠀⠀⠀⠀⠀""")
+water=(""" ⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠛⠛⠛⠋⠉⠀⠀⠀⠀""")
+
+snake=("""⠀⢀⣀⣤⣴⢶⣾⣞⠒⠶⢤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡟⢩⣇⠀⢛⣿⡟⠀⠀⠀⠙⢿⡲⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡒⡳⠒⠚⠙⠒⠂⠀⠀⠰⡄⢹⡄⢟⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⢹⡿⠶⣶⣤⡤⠤⠤⠖⢿⠁⣹⣺⡾⠈⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠀⠀⠘⣗⡒⠒⠒⢺⡏⣹⣽⡇⢰⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇⠀⠀⡄⢿⣉⠑⠒⢚⣏⣹⠉⡟⡞⢀⡎⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀⢧⣾⣮⣉⠒⢺⠋⡟⢺⣷⠛⣟⡼⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡏⠀⠀⣇⣼⣾⠃⠈⠁⡏⢸⠷⣇⣼⠚⠋⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠀⣠⢀⣟⣡⡏⠀⠀⣸⠁⣿⣟⣩⡄⢀⠀⣸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣠⠿⣼⢛⡟⠀⠀⢠⠃⢸⣟⡽⣥⠷⡜⣶⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⢹⣶⢯⢯⣉⠒⠶⡞⣠⣿⢯⡴⢧⢼⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⣾⣸⠻⢤⣈⠉⣻⠉⢠⣇⣾⣷⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⠃⠀⠀⠀⣰⠃⢀⡿⣻⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠋⠀⠀⠀⢠⠇⢀⣾⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠃⠀⠀⠀⠀⠀⢀⣾⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡏⠀⠀⠀⠀⠀⢀⣿⠏⢠⡿⣄⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⠴⠶⠶⠶⠤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⠀⠀⠀⠀⠀⢀⣾⡏⠀⠀⠻⣝⠷⣄⣀⣀⣀⣤⠶⠛⠁⠀⠀⠀⠀⠀⠀⠈⢻⡙⢶⣄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⠀⢸⡇⡀⠘⢦⣰⢃⣸⣿⠀⠀⠀⠀⠙⢷⣄⣀⣩⣥⡤⠤⠦⠦⠤⢤⣤⣤⣤⣴⡶⠏⠀⠀⠙⡆⠀⠀⠀⠀⠀
+⠀⠀⠀⣠⡴⠞⠛⠉⢀⡠⠆⠀⠉⠙⢻⡇⠙⠢⣄⣿⣁⣼⣿⣤⠤⠤⠶⠛⠛⠉⠁⠀⣀⣀⣠⡤⠤⠤⠴⢶⠤⠴⠦⠤⣤⣀⣀⣴⡇⠀⠀⠀⠀⠀
+⠀⢀⡞⠁⠀⠀⠀⢠⡎⠀⠀⠀⠀⠀⢸⡇⠲⣄⡀⠙⣇⣼⣿⠀⠀⠀⠀⣀⣤⠶⠚⠛⠉⠀⠀⠀⠀⠀⠀⠈⠙⠓⢦⡀⠀⠀⠙⠛⠦⣤⡀⠀⠀⠀
+⢠⡟⠀⠀⠀⠀⠀⢸⣄⣤⣤⢤⣤⣀⣸⡇⠀⠀⠉⣋⣯⣸⣿⣤⡤⠞⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡄⠀⠀⠀⠀⠀⠙⢧⡀⠀
+⢸⡇⠀⠀⠀⠀⠀⠘⢿⣉⠀⠀⠀⠉⠛⣿⠤⢤⣀⠈⠙⣤⡿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣤⣤⣤⣀⣸⣿⡄⠀⠀⠀⠀⠀⠘⣷⠀
+⠸⣧⠀⠀⠀⠀⠀⠀⠀⠙⠛⠒⠒⠚⠛⢻⡆⠠⣄⣉⣉⣹⡼⢻⣧⠀⠀⠀⠀⠀⣀⣠⣤⠶⠟⠛⠋⠉⠀⠀⠀⠀⠀⠀⣹⡇⠀⠀⠀⠀⠀⠀⣹⠀
+⠀⠘⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣄⠀⠀⠀⠀⠹⣍⠈⠳⣦⣴⡾⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡼⠋⠀⠀⠀⠀⠀⠀⢰⡿⡀
+⠀⠀⠀⠙⠷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⠀⠀⠀⠀⠈⠳⡄⠀⠉⠛⠲⠤⠤⣤⣀⣀⣤⠤⠤⠤⠔⠚⠋⠁⠀⠀⠀⠀⠀⠀⠀⢠⣿⠃⠀
+⠀⠀⠀⠀⠀⠈⠙⠛⠶⠤⣤⣤⣤⣤⣤⣤⣴⠶⠿⢧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⠟⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠲⠤⠤⢤⣄⣀⣀⣀⣀⣀⣀⣠⣤⣤⣤⡤⠶⠶⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠈""")
+
+
+# water snake and gun project
+# import random modules 
+# import ramdon.randint function
+# if ,elif,else conditions
+# use return keyword
+# input function 
+# def function 
+# 0=water
+# 1=snake
+# 2=gun
+
+
+# import random model
+import random
+# create a function 
+def fun(comp,user):
+   # use if ,else and elif conditions 
+   # create if condition
+   if comp == user:
+      print("Drow the game")
+  # create if condition
+   if comp==0 and user==2:
+      print("win computer")
+      print(water)
+   # create if condition
+   if comp==2 and user ==1:
+      print("computer win")
+      print("gun")
+   # create else condition
+   else: print("user win the game ")
+
+# create the user variable 
+user=int(input("Enter the value choice 0(water) 1(snake) 2(gun) \n"))
+print(f"user:{user}")
+# create the varible of computer 
+comp=random.randint(0,2)
+print(f"computer_user:{comp}")
+# call function
+fun(comp,user)
+
+
+
+
