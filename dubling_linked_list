@@ -1,0 +1,142 @@
+class Node :
+    def __init__(self,val):
+        self.val=val
+        self .prev=None 
+        self.next=None 
+class Dublinglinkedlist:
+    def __init__(self):
+        self .head=None 
+    # inert first 
+    def insert_first(self,val):
+        new_node=Node(val)
+        if self.head is None :
+            print("empty linked list")
+        else:
+            new_node.next=self.head
+            self.head.prev=new_node 
+            self.head=new_node 
+
+
+
+
+          
+    # insert last (append)
+    def append(self,val):
+        new_node=Node(val)
+        if self.head is None :
+            self.head=new_node
+        else:
+            curr=self.head
+            while curr.next is not None :
+                curr=curr.next
+            curr.next=new_node
+            new_node.prev=curr
+    def traverse(self):
+        if self.head is None :
+            print("empty linked list")
+        else:
+            curr=self.head
+            while curr is not None :
+                print(curr.val ,end=" <-> ")
+                curr=curr.next
+
+
+
+
+
+              
+    # insert at a possitions   
+    def insert_at_possitions (self,val,possition):
+        new_node=Node(val)
+        if self.head is None:
+            print("linked list is empty ")
+        if possition ==0:
+            new_node.next =self.head
+            self.head.prev=new_node
+            self.head=new_node
+        else:
+            curr=self.head
+            prv=None 
+            count=0
+            while curr.next is not None and count<possition:
+                prv=curr
+                curr=curr.next
+                count+=1
+            prv.next=new_node
+            new_node.prev=prv
+            new_node.next=curr
+            curr.prev=new_node
+
+
+
+          
+    # delete first linked list 
+    def del_first (self):
+        if self.head is None:
+            print("empty linked list") 
+        else:
+            self.head=self.head.next
+            self.head.next.prev=self.head
+
+
+
+
+
+              
+    # delete last 
+    def delete_last(self):
+        if self .head is None :
+          print("empty linked list") 
+        if self.head .next is None:
+            self.head =None 
+            self.head.prev=None
+        else:
+            curr=self.head 
+            while curr.next.next is not None :
+                curr=curr.next 
+            curr.next =None
+            curr.prev=None 
+
+
+
+
+
+            
+    # reverse the dubling linked list 
+    def reverse(self):
+        if self.head is None :
+            print("empty linked list ")
+        if self.head.next is None :
+            return self.head
+        else:
+            temp =None 
+            curr=self.head
+            frant=curr.next
+            while curr is not None:
+                frant=curr.next
+                curr.next=temp
+                curr.prev=frant
+                temp=curr
+                curr=frant
+            self.head=temp
+  
+    
+
+
+d=Dublinglinkedlist()
+d.append(17)
+d.append(100)
+d.append(10)
+d.append(1200)
+d.append(1080)
+d.append(180)
+d.insert_first(10)
+d.insert_at_possitions(190,2)
+d.del_first ()
+d.delete_last()
+d.delete_last()
+d.traverse()
+print()
+d.reverse()
+d.traverse()
+
