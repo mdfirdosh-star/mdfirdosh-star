@@ -86,7 +86,6 @@ print(pasword)
 
 
 
-# day1
 # hangman project
 import random 
 word=["happy","singh","mohan","sohan"]
@@ -99,11 +98,6 @@ for i in choise:
         print("right")
     else:
         print("wrong")
-
-
-# day2
-# project of random value chose in the list and the value all word show the blank space
-
 import random 
 list1=["firdosh","shaiyad ","izaril","apple"]
 choice=random.choice(list1)
@@ -123,14 +117,6 @@ for i in choice:
     else:
         display+="-"
 print(display)
-
-
-
-
-
-
-
-# project of hangman 
 import random
 list=["firdosh","mohan","sohan","himayu"]
 random_choice=random.choice(list)
@@ -157,10 +143,6 @@ while not game_over:
         else:
             display+="_"
     print(display)
-
-
-
-    # projecr step 4
 
 lavel=[''' _______
      |/      |
@@ -404,6 +386,7 @@ print(f"GENERATED_PASWORD: {pasword} ")
 # 0=water
 # 1=snake
 # 2=gun
+
 gun=(""" ⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣶⣤⣤⣤⣤⣶⣶⣶⣶⣶⣶⣦⣤⣤⡀⠀⠀⣶⠀
 ⢸⣿⣿⣿⣿⣿⣿⡿⢿⣿⡿⠟⢻⣿⣿⡟⠛⠛⠛⠉⠙⠛⠋⠀⠈⠉⠀⠈⠉⠁
 ⢸⣿⠿⠟⠋⠉⠀⢀⣾⡿⠉⠀⠈⠸⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -495,6 +478,161 @@ comp=random.randint(0,2)
 print(f"computer_user:{comp}")
 # call function
 fun(comp,user)
+
+
+
+
+
+
+# 76 calculater project 
+art=("""    _____________________
+|  _________________  |
+| | JO           0. | |
+| |_________________| |
+|  ___ ___ ___   ___  |
+| | 7 | 8 | 9 | | + | |
+| |___|___|___| |___| |
+| | 4 | 5 | 6 | | - | |
+| |___|___|___| |___| |
+| | 1 | 2 | 3 | | x | |                                               
+| |___|___|___| |___| |
+| | . | 0 | = | | / | |
+| |___|___|___| |___| |
+|_____________________|
+                   88                        88                     
+                      88                        88              ,d     
+                      88                        88              88     
+ ,adPPYba, ,adPPYYba, 88  ,adPPYba, 88       88 88 ,adPPYYba, MM88MMM  
+a8"     "" ""     `Y8 88 a8"     "" 88       88 88 ""     `Y8   88     
+8b         ,adPPPPP88 88 8b         88       88 88 ,adPPPPP88   88     
+"8a,   ,aa 88,    ,88 88 "8a,   ,aa "8a,   ,a88 88 88,    ,88   88,    
+ `"Ybbd8"' `"8bbdP"Y8 88  `"Ybbd8"'  `"YbbdP'Y8 88 `"8bbdP"Y8   "Y888  
+                                                        """)
+print(art)
+# create the functions with multiple operations 
+def add(n1,n2):
+    return n1+n2
+def Subtraction(n1,n2):
+    return n1-n2
+def Multiplication(n1,n2):
+    return n1*n2
+def Division(n1,n2):
+    return n1/n2
+# create the dict key(all mathmecical operators and symbols )
+operations={ "+" :add,
+            "-":Subtraction,
+            "*":Multiplication,
+            "/": Division,}
+def calculator():
+     shouled_accumate=True
+     while shouled_accumate:
+         num1=float(input("what is your first no: "))
+         for symbol in operations:
+             print(symbol)
+         operation_symbol=input("pick the operations symbol: ")
+         num2=float(input("what is the next no:"))
+         answer=(operations[operation_symbol](num1,num2))
+         print(f"{num1} {operation_symbol} {num2} = {answer}")
+         choice=input(f"type 'y' to countinue the calculation with{answer} or 'n' type to start the calculations:")
+         if choice=="y":
+             num1=answer
+         else:
+              shouled_accumate=False
+              print(art)
+              print( "\n"*2 )
+              calculator()
+calculator()
+
+
+
+
+
+
+
+
+# project of blackjack
+art="""88          88                       88        88                       88         
+88          88                       88        ""                       88         
+88          88                       88                                 88         
+88,dPPYba,  88 ,adPPYYba,  ,adPPYba, 88   ,d8  88 ,adPPYYba,  ,adPPYba, 88   ,d8   
+88P'    "8a 88 ""     `Y8 a8"     "" 88 ,a8"   88 ""     `Y8 a8"     "" 88 ,a8"    
+88       d8 88 ,adPPPPP88 8b         8888[     88 ,adPPPPP88 8b         8888[      
+88b,   ,a8" 88 88,    ,88 "8a,   ,aa 88`"Yba,  88 88,    ,88 "8a,   ,aa 88`"Yba,   
+8Y"Ybbd8"'  88 `"8bbdP"Y8  `"Ybbd8"' 88   `Y8a 88 `"8bbdP"Y8  `"Ybbd8"' 88   `Y8a  
+                                              ,88                                  
+                                            888P"        """
+print(art)
+import random 
+def deal_cards():
+    cards=[11,2,3,4,5,6,7,8,9,10,10,10,10]
+    card=random.choice(cards)
+    return card
+
+def compare(user_score, computer_score):
+    """Compare user and computer scores."""
+    if user_score == computer_score:
+        return "Draw 😐"
+    elif computer_score == 0:
+        return "Lose, opponent has Blackjack 😭"
+    elif user_score == 0:
+        return "Win with a Blackjack 😎"
+    elif user_score > 21:
+        return "You went over 21. You lose 😭"
+    elif computer_score > 21: 
+        return "Opponent went over 21. You win 😎"
+    elif user_score > computer_score:
+        return "You win 😍"
+    else:
+        return "You lose 😭"
+user_card=[]
+computer_card=[]
+user_score=-1
+computer_score=-1
+game_over=False
+def calculate_score(cards):
+    if sum(cards)==21 and len(cards)==2:
+        return 0
+    if 11 in cards and sum(cards)>21:
+        cards.remove(11)
+        cards.append(1)
+    return sum(cards)
+for _ in range (2):
+    user_card .append(deal_cards())
+    computer_card .append(deal_cards())
+
+while not game_over:
+   user_score= calculate_score(user_card)
+   computer_score=calculate_score(computer_card)
+   print(f"user_cards:{user_card} and user_score:{user_score}")
+   print(f"computer_cards:{computer_card[0]}")
+   if user_score ==0 or computer_score ==0 or user_score > 21:
+       game_over=True
+   else:
+       user_should_deal=input("type 'y' to get another cards  and type 'n' pass:").lower()
+       if user_should_deal=="y":
+           user_card.append(deal_cards())
+       else:
+           game_over=True
+while computer_score != 0 and computer_score < 17:
+    computer_card.append(deal_cards())
+    computer_score=calculate_score(computer_card)
+
+    print(f"\nYour final hand: {user_card}, final score: {user_score}")
+    print(f"Computer's final hand: {computer_card}, final score: {computer_score}")
+    print(compare(user_score,computer_score))
+  
+           
+    
+
+
+
+
+
+
+
+
+
+
 
 
 
