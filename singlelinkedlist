@@ -1,0 +1,249 @@
+class Node :
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+
+node1=Node(10)
+node2=Node(11)
+node3=Node(12)
+node4=Node(103)
+node5=Node(109)
+node6=Node(100)
+node1.next=node2
+node2.next=node3
+node3.next=node4
+node4.next=node5
+node5.next=node6
+node6.next=None
+print(node1.val)
+print(node5.next.val)
+print()
+
+# use singly linked list in pythan use class methord 
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+class singlylinkedlist:
+    def __init__(self):
+        self.head=None
+    def append (self,val):
+        new_node=Node(val)
+        if self.head==None:
+            self.head=new_node
+        else:
+            curr=self.head
+            while curr.next is not None :
+                curr=curr.next
+            curr.next=new_node
+
+
+
+    def traverse (self):
+        if self.head is None:
+            print("empty linked list")
+        else:
+            curr=self.head
+            while curr is not None:
+                print(curr.val,end=" ,")
+                curr=curr.next
+
+
+
+    ## insert in first in linkedlist  
+
+    def insert_first(self,val):
+        new_node=Node(val)
+        new_node.next=self.head
+        self.head=new_node
+
+
+
+    ## insert in last linked list
+    def insert_end(self,val):
+        new_node=Node(val)
+        if self.head is None :
+            self.head=new_node
+        else:
+            curr=self.head
+            while curr.next is not None:
+                curr=curr.next
+            curr.next=new_node
+
+
+
+    # insert at a specific position 
+    def insert_at(self,val,possition ):
+        new_node=Node(val)
+        if possition ==0:
+            new_node.next=self.head
+            self.head=new_node
+        else:
+            curr=self.head
+            prev=None
+            count=0
+            while curr.next is not None and count<possition:
+                prev=curr
+                curr=curr.next
+                count+=1
+            prev.next=new_node
+            new_node.next=curr
+
+
+
+    # delete fist node 
+    def delete_first(self):
+        if self.head is None :
+            print("this linked list is alrady None ")
+        else:
+            self.head=self.head.next
+
+
+
+     # delete last node
+    def delete_end(self):
+        if self.head is None :
+            print("this linked list is empty ")
+        if self.head.next is None :
+            self.head=None 
+        else:
+            curr=self.head
+            while curr.next.next is not None:
+                curr=curr.next
+            curr.next=None
+        # delete at possitions 
+
+
+
+    def delete_at(self,val):
+        curr=self.head
+        if self.head is None :
+            print("empty linked list")
+        if curr.next is not None :
+            if curr.val==val:
+                self.head=curr.next
+            else:
+                prev=None 
+                found=False
+                curr=self.head
+                while curr is not None :
+                    if curr.val==val:
+                        found=True
+                        break
+                    prev=curr
+                    curr=curr.next
+                if found:
+                    prev.next=curr.next
+                else:
+                    print("node not found")
+
+        
+
+
+
+
+    # reverse the linkedlist 
+    def reverse(self):
+        temp=self.head
+        prev=None 
+        while temp is not None :
+            front=temp.next
+            temp.next=prev
+            prev=temp
+            temp=front
+        self.head=prev
+
+
+
+
+    # Cycles linked list
+    def cycle (self):
+        temp =self.head
+        my_set=set()
+        while temp is not None :
+            if temp in my_set:
+                return True 
+        my_set.add(temp)
+        temp=temp.next
+    # cycle linked list
+    # optimal soultion 
+    def cycle_1(self):
+        fast=self.head
+        slow=self.head
+        while fast is not None and fast.next is not None:
+            fast=fast.next.next
+            slow=slow.next
+            if slow ==fast:
+                return True 
+        return False 
+
+
+
+
+   # even_index odd_index values (in linked_list ) is seprateded  #  (odd_index first)
+
+   # odd_index values first and even_index values last
+    def odd_even(self):
+        if self.head is None and self.head.next is None :
+            return self.head
+        odd=self.head
+        even=self.head.next
+        even_index=even
+        while even is not None and even.next is not None :
+            odd.next=odd.next.next
+            odd=odd.next
+            even.next=even.next.next
+            even=even.next
+        odd.next=even_index
+        return self.head
+
+
+
+
+
+
+    # even_index values first and odd_index values last
+    def even_odd(self):
+        if self.head is None and self.head.next is None :
+            return self.head
+        odd=self.head
+        even=self.head.next
+        even_index=even
+        while even is not None  and even.next is not None :
+            odd.next=odd.next.next
+            odd=odd.next
+            even.next=even.next.next
+            even=even.next
+        new_head=even_index
+        last_even=even_index
+        odd.next=None
+        while last_even.next is not None :
+            last_even=last_even.next
+        last_even.next=self.head
+        self.head=new_head    
+        return self.head
+
+
+
+
+
+
+s=singlylinkedlist()
+s.append(92)
+s.append(90000)
+s.append(905)
+s.insert_first(61)
+s.insert_end(50)
+s.insert_at(100,4)
+# print(f"Reverse linkedlist {s.reverse()}")
+# s.cycle ()
+# s.cycle_1()
+s.traverse()
+print()
+# s.odd_even()
+# s.traverse()
+# print()
+s.even_odd()
+s.delete_at(100)
+s.traverse()
+
